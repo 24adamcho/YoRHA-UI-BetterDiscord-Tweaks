@@ -1,0 +1,688 @@
+/**
+ * @name Nier UI theme tweaks
+ * @version 1.0
+ * @description Various tweaks to the NieR:Automata UI Light by https://github.com/AccraZed/YoRHA-UI-BetterDiscord
+ * @author dootykins
+ */
+
+/* GLOBAL VARIABLES */
+:root {
+	--color-high: rgb(218, 212, 187);
+	--color-low: rgb(87, 84, 74);
+	--color-mid: rgb(151, 147, 129);
+	--color-alert: rgb(205, 102, 77);
+	--color-high-trans: rgba(218, 212, 187, 0.8);
+	--color-low-trans: rgba(87, 84, 74, 0.6);
+	--color-alert-trans: rgba(205, 102, 77, 0.7);
+	--nier-font: sce-ps3_rodin_latinregular;
+
+	--color-green: rgb(116, 189, 133);
+	--color-green-trans: rgb(116, 189, 133, 0.6);
+}
+
+
+@keyframes pulsingColor {
+	0% {
+		color: var(--color-low);
+	}
+	20% {
+		color: var(--color-low);
+		opacity: 100%;
+	}
+	50% {
+		color: var(--color-low-trans);
+		opacity: 75%;
+	}
+	80% {
+		color: var(--color-low);
+		opacity: 100%;
+	}
+	100% {
+		color: var(--color-low);
+	}
+}
+
+.tutorialContainer-1pL9QS .svg-2ifYOU
+{
+	animation-name: none;
+}
+
+/**
+ *	make channels/dms pulse only when hovered over to reduce visual noise
+ */
+.wrapper-NhbLHG .linkTop-1W1aK6:before {
+	animation-name: none;
+	background-color: var(--color-low);
+}
+.wrapper-NhbLHG .linkTop-1W1aK6:hover
+{
+	animation-name: pulsingColor !important;
+	animation-duration: 1.5s;
+	animation-iteration-count: infinite;
+}
+.theme-dark .channel-1Shao0 .layout-1LjVue:before {
+	animation-name: none;
+	background-color: var(--color-low);
+}
+.theme-dark .channel-1Shao0 .layout-1LjVue:hover {
+	animation-name: pulsingColor !important;
+	animation-duration: 1.5s;
+	animation-iteration-count: infinite;
+}
+
+.wrapper-2fEmwW {
+	border: 2px solid var(--color-mid);
+}
+
+/* slight transparency dusting so the window bar at the top shows up a bit more clearly */
+/* .app-2CXKsg,
+.bg-1QIAus {
+	background-color: rgba(100, 100, 100, 0.1);
+} */
+
+/* rearrange annoying grid overlay behind most elements*/
+#app-mount:after {
+	z-index: 49 !important;
+}
+
+/* unspoilered text */
+.obscuredTextContentInner-2ytmvF[aria-hidden="false"] {
+	color: var(--color-high);
+	background-color: var(--color-low-trans);
+	border-radius: 4px;
+}
+
+.backgroundFlash-1X5jVs::before {
+	content:none;
+}
+
+.backgroundFlash-1X5jVs {
+	transition: background-color .1s ease-out !important;
+	background-color: var(--color-alert-trans) !important;
+}
+[style="background-color: rgba(148, 156, 247, 0);"] {
+	background-color: transparent !important;
+	transition: background-color 1s ease-out !important;
+}
+
+/* align text box with characters instead of pictures */
+.channelTextArea-1FufC0 {
+	margin-left: 13px;
+}
+.attachWrapper-3slhXI {
+	padding-left: 4px;
+	padding-right:4px;
+}
+
+.full-motion .avatar-2e8lTP.clickable-31pE3P {
+	vertical-align: top;
+	align-self: center;
+	transform: translate(-8%, 4%);
+	scale:118%;
+}
+
+/* fix broken embedded media borders (and also add a highlighting effect) */
+.imageWrapper-oMkQl4 {
+    background: transparent !important;
+    
+	display: inline-block !important;
+	transform-origin: top left;
+	transform: scale(100%);
+	transition: box-shadow 0.2s ease-out;
+}
+.imageWrapper-oMkQl4:hover {
+	box-shadow: 4px 4px 0 var(--color-alert) !important;
+	transition: box-shadow 0.2s ease-out;
+}
+
+img,
+video,
+.embedMedia-1mdWSP {
+	border-radius: 0 !important;
+}
+
+.hideOverflow-bsO1Md {overflow:visible !important;}
+
+.messageContent-2t3eCI,
+.container-2sjPya {
+	transform: translate(10px, 0px);
+}
+
+.embedMedia-1mdWSP,
+.oneByOneGrid-3Cl27N,
+.mediaAttachmentsContainer-1WGRWy{
+	/*outline: 10px solid rgba(0, 172, 69, 0.3);*/
+	padding-bottom: 4px;
+	padding-right: 4px;
+}
+
+/* some attatchment shit */
+.embedWrapper-1MtIDg {
+	/* border-color: hsla(0, calc(1 * 100%), 50%, 1) !important; */
+	border-width: 3px;
+}
+.nonMediaAttachmentItem-1e7YaR {
+	box-shadow: 4px 4px 0 var(--color-mid);
+}
+.attachment-1PZZB2.horizontal-1Piu5-.flex-3BkGQD.directionRow-2Iu2A9.alignCenter-14kD11.embedWrapper-1MtIDg.attachmentContentItem-UKeiCx.newMosaicStyle-35X6XO {
+	box-shadow: -9px 0 0 var(--color-high), -12px 0 0 var(--color-low);
+}
+.container-2sjPya > .embedWrapper-1MtIDg.embedFull-1HGV2S.embed-hKpSrO:has(.gridContainer-1cF_Ic) {
+	border-left: 3px solid var(--color-low);
+}
+.spoilerContent-32CqO- {
+	border-radius: 0;
+}
+.spoilerContent-32CqO-:hover {
+	background-color:var(--color-high);
+}
+
+.attachment-1PZZB2 {
+	left:0;
+	margin-left:0;
+	padding-left:0;
+	border-radius: 0;
+	box-shadow: 4px 4px 0 var(--color-mid);
+	border:none;
+	border-left: 3px solid var(--color-low);
+}
+.ECBlock {
+	border-radius: 0;
+	box-shadow: 4px 4px 0 var(--color-mid);
+	border:none;
+	border-left: 3px solid var(--color-low);
+}
+.markup-eYLPri {
+	overflow:visible !important;
+}
+.mediaAttachmentsContainer-1WGRWy {
+	display:grid;
+}
+.mediaAttachmentsContainer-1WGRWy > * {
+	gap:8px;
+}
+.mediaAttachmentsContainer-1WGRWy > * > * {
+	box-shadow: 4px 4px 0 var(--color-mid);
+	transition: box-shadow 0.2s ease-out;
+}
+.mediaAttachmentsContainer-1WGRWy > * > *:hover {
+	box-shadow: 4px 4px 0 var(--color-alert);
+	transition: box-shadow 0.2s ease-out;
+}
+
+/* streaming fixes */
+.participantsWrapperAnimated-2Wdxe1 {
+	padding-bottom: 4px;
+	padding-right: 4px;
+}
+.pictureInPictureWindow-3ms5Zy {
+	border-radius:0;
+	box-shadow: 4px 4px 0 var(--color-low) !important;
+}
+.speaking-7QZEkv,
+.border-2Vy6FN,
+.pictureInPictureVideo-2puO2Q {
+	border-radius:0;
+}
+.text-md-normal-2rFCH3,
+.small-19_Ojd {
+	color:var(--color-high) !important;
+}
+.headerTitle-iz6vaZ > *,
+.viewers-15Alqi > * ,
+.controlIcon-10O-4h {
+	color:var(--color-mid-trans) !important;
+}
+.headerTitle-iz6vaZ:hover > *,
+.viewers-15Alqi:hover > * ,
+.controlIcon-10O-4h:hover {
+	color:var(--color-high) !important;
+}
+.streamPreview-I7itZ6 {
+	border-radius: 0px;
+	box-shadow: 4px 4px var(--color-mid);
+	padding:4px;
+}
+
+/* make guild markers prettier*/
+.wrapper-z5ab_q,
+.item-2LIpTv {
+	height: 100% !important;
+	width: 16px !important;
+}
+
+/* blink dm alert marker color */
+@keyframes dmBlink {
+	20% {
+		opacity: 100%;
+	}
+	50% {
+		opacity: 55%;
+	}
+	80% {
+		opacity: 100%;
+	}
+}
+
+.pill-22lZHo > .item-2LIpTv {
+	background-color: var(--color-green);
+	animation-name: dmBlink;
+	animation-duration: 1.5s;
+	animation-iteration-count: infinite;
+	animation-direction: alternate-reverse;
+
+	transition: background-color 0.2s ease-out;
+}
+.listItem-3SmSlK:hover > .pill-22lZHo {
+	animation-play-state: paused;
+	background-color: var(--color-low);
+	transition: background-color 0.2s ease-in;
+}
+
+/* shove around guild alert badges */
+.lowerBadge-3j0ZAg,
+.upperBadge-1d6YsW {
+	left:0;
+	right:auto;
+	scale:90%;
+}
+.upperBadge-1d6YsW {
+	transform-origin: top right;
+	opacity:0;
+	transform: translate(-110%, 0%) !important;
+}
+.lowerBadge-3j0ZAg {
+	transform-origin: bottom right;
+	transform: translate(-110%, -1%) !important;
+}
+
+.numberBadge-37OJ3S, .icon-2Ug6UV {
+	background-color: rgba(0,0,0,0) !important;
+}
+
+/* guild ping alert blink */
+/* use top level listItem pseudoselector so we can crawl back up and affect .pill.item instead for colors*/
+.listItem-3SmSlK:has(
+	div 
+		> .blobContainer-ikKyFs 
+			> .wrapper-2PSQCG 
+				> .lowerBadge-3j0ZAg
+	) 
+	> .pill-2RsI5Q 
+		> .item-2LIpTv,
+.listItem-3SmSlK:has(
+	div 
+		> .wrapper-2PSQCG 
+			> .lowerBadge-3j0ZAg
+	) 
+	> .pill-2RsI5Q 
+		> .item-2LIpTv {
+	background-color: var(--color-green);
+	animation-name: dmBlink;
+	animation-duration: 1.5s;
+	animation-iteration-count: infinite;
+	animation-direction: alternate-reverse;
+}
+.listItem-3SmSlK:has(
+	div 
+		> .blobContainer-ikKyFs 
+			> .wrapper-2PSQCG 
+				> .lowerBadge-3j0ZAg
+	):hover 
+	> .pill-2RsI5Q 
+		> .item-2LIpTv,
+.listItem-3SmSlK:has(
+	div 
+		> .wrapper-2PSQCG 
+			> .lowerBadge-3j0ZAg
+	):hover 
+	> .pill-2RsI5Q 
+		> .item-2LIpTv{
+	animation-play-state: paused;
+	background-color: var(--color-low);
+	transition: background-color 0.2s ease-in;
+}
+/*also fix transparency on other server icons*/
+.iconBadge-32fMme {
+	background-color: transparent !important;
+}
+
+/* channel ping alert that doesn't suck ass*/
+.linkTop-1W1aK6:has(
+				.children-1MGS9G 
+					> .channelInfo-3jN1ay 
+						> .mentionsBadge-3H1BKJ) {
+	background-color: var(--color-green);
+	animation-name: dmBlink;
+	animation-duration: 1.5s;
+	animation-iteration-count: infinite;
+	animation-direction: alternate-reverse;
+}
+.channelInfo-3jN1ay > .mentionsBadge-3H1BKJ > .numberBadge-37OJ3S {
+	color:var(--color-alert-trans) !important;
+	font-weight:bold;
+}
+
+/* voice channel users */
+.total-1c5KCN {
+	background-color:var(--color-low) !important;
+}
+.total-1c5KCN::after {
+	border-right-color: var(--color-low) !important;
+}
+.wrapper-2fEmwW {
+	border: 0px;
+	box-shadow: 2px 2px 0 var(--color-mid) !important;
+}
+
+/* channel description invisible */
+.text-md-normal-2rFCH3 {
+	color: var(--color-low-trans) !important;
+}
+
+/* opened image 'Open Original' text is barely visible */
+.downloadLink-3cavAH {
+	color: var(--color-high-trans) !important;
+	text-shadow: 3px 2px 0 var(--color-mid);
+	display:flex;
+	right:0;
+	left:auto;
+}
+
+/* new messages bar */
+@keyframes slideIn {
+	0% {
+		scale:90%;
+		background-opacity:0;
+	}
+	100% {
+		scale:100%;
+		background-opacity:1;
+	}
+}
+.barBase-3xxDXu {
+	min-height: 0;
+	transform-origin:center center;
+	animation: slideIn 0.2s;
+	overflow:hidden !important;
+
+	left: 60px;
+	right: 16px;
+	opacity:1;
+	
+	background-color: var(--color-alert);
+	box-shadow: 6px 6px var(--color-low-trans);
+}
+/* .newMessagesBar-1hF-9G:has(*:hover),
+.jumpToPresentBar-1cEnH0:has(*:hover) {
+	box-shadow: 5px 5px var(--color-low-trans);
+	transform:translate(-1px, -1px);
+}
+.newMessagesBar-1hF-9G > *:hover,
+.jumpToPresentBar-1cEnH0 > *:hover {
+	border-bottom: 1px solid transparent!important;
+} */
+
+.jumpToPresentBar-1cEnH0 {
+	bottom:18px;
+	padding-bottom: 0px;
+	height:32px;
+}
+
+/* quirky offsets */
+.newMessagesBar-1hF-9G {
+	min-width: fit-content;
+	width:35%;
+	margin-left:0;
+	margin-right:auto;
+}
+.jumpToPresentBar-1cEnH0 {
+	min-width: fit-content;
+	width: 40%;
+	margin-left:auto;
+	margin-right:0;
+}
+
+/* shade channel title bar */
+.chat-2ZfjoI {
+	display: flex;
+}
+.title-31SJ6t {
+	background: var(--color-high-trans) !important;
+	/* box-shadow: 0 -4px 0 var(--color-low-trans) inset; */
+	height:52px;
+	border-bottom: 4px solid var(--color-low-trans) !important;
+}
+.members-3WRCEx > .content-yjf30S > [aria-hidden="true"] {
+	height:52px !important;
+}
+.container-2o3qEW {
+	position:relative;
+	bottom:0;
+}
+.content-1jQy2l {
+	position:absolute;
+	z-index: 50;
+	height:100%;
+	width: 100%;
+}
+.newMessagesBar-1hF-9G {
+	top:66px;
+}
+
+/* hackey server title button highlight */
+.container-1-ERn5.hasBanner-2IrYih> .header-3OsQeK:hover {
+	background-color:var(--color-high-trans) !important;
+}
+.container-1-ERn5 > .header-3OsQeK:hover {
+	background-color:var(--color-high) !important;
+}
+/* channel title nicities */
+.header-3OsQeK {
+	background-color: var(--color-high-trans);
+	border-bottom:4px solid var(--color-low-trans);
+}
+.animatedContainer-2laTjx {
+	background-color: transparent !important;
+	opacity: 1 !important;
+	
+	height:135px;
+	border-bottom: 4px solid var(--color-low-trans);
+	transition:border-color .2s linear;
+}
+.bannerImage-ubW8K-::before {
+	background:none !important;
+}
+.hasBanner-2IrYih .header-3OsQeK {
+	border-bottom:4px solid transparent;
+	transition:background-color .2s linear, border-color;
+}
+.container-1-ERn5:not(.hasBanner-2IrYih) > .animatedContainer-2laTjx {
+	border-color: transparent !important;
+	height:140px;
+	transition:border-color .2s linear, height .2s linear;
+}
+.headerContent-2SNbie {
+	filter:none !important;
+}
+
+.flowerStarContainer-1QeD-L > .flowerStar-2tNFCR > path {
+	color:var(--color-alert) !important;
+	fill:var(--color-alert) !important;
+}
+.flowerStarContainer-1QeD-L > .childContainer-U_a6Yh > * > g > path {
+	color:var(--color-high) !important;
+	fill:var(--color-high) !important;
+}
+
+/* .content-yjf30S > div[style="height: 12px;"]{
+	height:0 !important;
+} */
+
+/* editor window tweak */
+.floating-addon-window {
+	box-shadow: 4px 4px var(--color-low-trans);
+	opacity:80%;
+}
+
+/* members list border */
+/* .container-2o3qEW {
+	border-left: 2px;
+	border-color: var(--color-low);
+	border-left-style: solid;
+} */
+.container-2o3qEW:after {
+  content: '';
+  height: 100%;
+  width: 2px;
+  
+  position: absolute;
+  left: 0;
+  top: 48px;
+  
+  background-color: var(--color-low-trans);
+}
+
+/* channel scroll borders for boundary visibility */
+.sidebar-1tnWFu {
+	border-left:2px;
+	border-right:2px;
+	border-color: var(--color-low-trans);
+	border-style:solid;
+}
+
+/* tooltip and infobox fix */
+.tooltip-33Jwqe,
+.contentWrapper-2f9yME,
+.contentWrapper-3vHNP2  {
+	border-radius: 0;
+	border:0px;
+	box-shadow: 4px 4px var(--color-mid) !important;
+}
+
+/* reply prettyfy */
+.message-2CShn3 {
+	padding-right: 0 !important;
+}
+.message-2CShn3 .contents-2MsGLg,
+.message-2CShn3 .container-2sjPya{
+	max-width: 800px;
+}
+.message-2CShn3 .contents-2MsGLg,
+.message-2CShn3 .container-2sjPya,
+.message-2CShn3 .buttonContainer-1502pf {
+	/* padding-right: 48px !important; */
+	padding-right: 0px !important;
+	margin-right: 48px !important;
+}
+
+.repliedTextPreview-1bvxun {
+	order:2;
+	left:0;
+	min-width:400px;
+	max-width: 800px;
+	margin-right:40%;
+	--mask: linear-gradient(to right, 
+      rgba(0,0,0, 1) 0,   rgba(0,0,0, 1) 40%, 
+      rgba(0,0,0, 0) 95%, rgba(0,0,0, 0) 0
+  ) 100% 50% / 100% 100% repeat-x;
+  -webkit-mask: var(--mask); 
+  mask: var(--mask);
+}
+.repliedTextContentIcon-1LQXRB {
+	order:1;
+}
+
+/* hide popup when fuckton of characters */
+.characterCount-8yNPfb {
+	display: none;
+}
+/* ...but still make it display, just on a separate plugin */
+.form-3gdLxP {
+	padding-bottom:0px;
+}
+.counter-uAzbKp {
+	padding-top: 2px;
+}
+@keyframes shake {
+  0%   { text-shadow:  3px  3px var(--color-low); transform:translate(1px, 1px); }
+  10%  { text-shadow:  2px  1px var(--color-low); transform:translate(-1px, -1px); }
+  20%  { text-shadow:  2px  2px var(--color-low); transform:translate(-1px, 0px); }
+  30%  { text-shadow:  1px  3px var(--color-low); transform:translate(1px, 1px); }
+  40%  { text-shadow:  1px  1px var(--color-low); transform:translate(1px, -1px); }
+  50%  { text-shadow:  1px  2px var(--color-low); transform:translate(-1px, 1px); }
+  60%  { text-shadow:  1px  3px var(--color-low); transform:translate(-1px, 1px); }
+  70%  { text-shadow:  2px  1px var(--color-low); transform:translate(1px, 1px); }
+  80%  { text-shadow:  2px  3px var(--color-low); transform:translate(-1px, -1px); }
+  90%  { text-shadow:  1px  2px var(--color-low); transform:translate(1px, 1px); }
+  100% { text-shadow:  1px  2px var(--color-low); transform:translate(-1px, 0px); }
+}
+.channelTextArea-1FufC0:has(.error-3_o9DA) ~ .counter-uAzbKp {
+	color:var(--color-alert);
+	text-shadow: 2px 2px var(--color-low);
+	transform:translate(-2px, -2px);
+	transition: all .4s;
+
+	animation: shake 0.2s linear infinite forwards;
+}
+.counter-uAzbKp {
+	color:var(--color-low);
+	text-shadow: 0px 0px var(--color-low);
+	transform:translate(0, 0);
+	transition: all 1s;
+	font-size: 100% !important;
+}
+/* buzz text counter instead of bringing up annoying nitro advert 
+	this technically works but leads to a memory leak, spawning infinite popups.*/
+/* .layerContainer-2lfOPe {
+	display:none;
+} */
+
+
+/* align text pretty style */
+.markup-eYLPri.messageContent-2t3eCI {
+	text-align: justify;
+}
+.ECBlock-wrapper {
+	text-align: left;
+}
+
+.markup-eYLPri.editor-H2NA06 {
+	text-align: justify;
+}
+.markup-eYLPri.editor-H2NA06 
+	> div:has(
+		span
+			.codeBlockSyntax-3mFGiA
+	),
+.markup-eYLPri.editor-H2NA06 
+	> div:has(
+		span
+			.codeBlockText-28BOxV
+	),
+.markup-eYLPri.editor-H2NA06 
+	> div.codeLine-2C-9aH {
+	text-align: left;
+}
+
+/* fix italibold (missing in nier font probably) */
+.italics-1HfeXG.bold-ia41Lc {
+	font-style:normal;
+	text-shadow:2px 2px var(--color-mid);
+}
+
+/* block quote */
+blockquote {
+	background-color:var(--color-high);
+	box-shadow: 4px 4px var(--color-mid);
+}
+.blockquoteContainer-3VtvI1 {
+	padding-bottom: 4px;
+}
+
+/* danger alert buttons */
+.colorDanger-3umuSx {
+	background-color: var(--color-alert) !important;
+	box-shadow: 0  1px var(--color-low) inset, 0  2px var(--color-high) inset, 0  3px var(--color-low) inset,
+				0 -1px var(--color-low) inset, 0 -2px var(--color-high) inset, 0 -3px var(--color-low) inset;
+}

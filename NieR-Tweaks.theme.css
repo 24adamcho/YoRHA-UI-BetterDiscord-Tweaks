@@ -454,21 +454,24 @@ video,
 	height:52px;
 	border-bottom: 4px solid var(--color-low-trans) !important;
 }
-.members-3WRCEx > .content-yjf30S > [aria-hidden="true"] {
-	height:52px !important;
+.newMessagesBar-1hF-9G {
+	top:66px;
 }
+
+/* fix member list scroll */
 .container-2o3qEW {
 	position:relative;
 	bottom:0;
+	top:0;
+}
+.container-2o3qEW > .membersWrap-3NUR2t  > .members-3WRCEx {
+	padding-top:48px;
 }
 .content-1jQy2l {
 	position:absolute;
 	z-index: 50;
 	height:100%;
 	width: 100%;
-}
-.newMessagesBar-1hF-9G {
-	top:66px;
 }
 
 /* hackey server title button highlight */
@@ -532,7 +535,7 @@ video,
 	border-color: var(--color-low);
 	border-left-style: solid;
 } */
-.container-2o3qEW:after {
+.container-2o3qEW::after {
   content: '';
   height: 100%;
   width: 2px;

@@ -15,3 +15,7 @@ The changes progress from 'I think this could look better' to 'total conversion'
 
 ### Why is it arranged in a schizophrenic mess?
 I wrote it over the course of 3 days in a hyperfocused haze. Please forgive me.
+
+## See also...
+
+ - [Adam's Hide-Guilds theme]https://github.com/24adamcho/Hide-Guilds-BetterDiscord

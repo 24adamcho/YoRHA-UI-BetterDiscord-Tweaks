@@ -18,4 +18,4 @@ I wrote it over the course of 3 days in a hyperfocused haze. Please forgive me.
 
 ## See also...
 
- - [Adam's Hide-Guilds theme]https://github.com/24adamcho/Hide-Guilds-BetterDiscord
+ - [Adam's Hide-Guilds theme](https://github.com/24adamcho/Hide-Guilds-BetterDiscord)

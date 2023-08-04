@@ -188,10 +188,19 @@ video,
 	border-left: 3px solid var(--color-low);
 }
 .ECBlock {
+	margin-top:4px;
 	border-radius: 0;
-	box-shadow: 4px 4px 0 var(--color-mid);
+	box-shadow: 4px 4px 0 var(--color-mid),
+				-12px 0px 0 var(--color-low), 
+				-9px 0px 0 solid var(--color-mid)
+				-4px 0px 0 var(--color-low),;
 	border:none;
-	border-left: 3px solid var(--color-low);
+
+}
+.ECBlock,
+.messageContent-2t3eCI pre > code {
+	left:-9px;
+	position:relative;
 }
 .markup-eYLPri {
 	overflow:visible !important;
@@ -647,6 +656,7 @@ video,
 .markup-eYLPri.messageContent-2t3eCI {
 	text-align: justify;
 }
+.scrollbarGhostHairline-2LpzZ9,
 .ECBlock-wrapper {
 	text-align: left;
 }

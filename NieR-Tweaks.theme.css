@@ -661,6 +661,11 @@ video,
 	text-align: left;
 }
 
+/* edge case that results in embed links justifying previous text */
+.fakeLink-1wGafz:before {
+	content'\A';
+}
+
 .markup-eYLPri.editor-H2NA06 {
 	text-align: justify;
 }

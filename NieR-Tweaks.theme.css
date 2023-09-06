@@ -83,7 +83,7 @@
 
 /* rearrange annoying grid overlay behind most elements*/
 #app-mount:after {
-	z-index: 49 !important;
+	z-index: -1 !important;
 }
 
 /* unspoilered text */
@@ -221,6 +221,15 @@ video,
 }
 
 /* streaming fixes */
+.buttonContents-2lXacR>.defaultColor-1EVLSt {
+	color:var(--color-mid);
+}
+.button-2fD9Wx:hover>.contents-3NembX>.defaultColor-1EVLSt {
+	color:var(--color-low);
+}
+.wrapper-1gVUIN {
+	z-index: 80;
+}
 .participantsWrapperAnimated-2Wdxe1 {
 	padding-bottom: 4px;
 	padding-right: 4px;
@@ -660,7 +669,6 @@ video,
 .ECBlock-wrapper {
 	text-align: left;
 }
-
 /* edge case that results in embed links justifying previous text */
 .fakeLink-1wGafz:before {
 	content:'\A';
@@ -704,4 +712,19 @@ blockquote {
 	background-color: var(--color-alert) !important;
 	box-shadow: 0  1px var(--color-low) inset, 0  2px var(--color-high) inset, 0  3px var(--color-low) inset,
 				0 -1px var(--color-low) inset, 0 -2px var(--color-high) inset, 0 -3px var(--color-low) inset;
+}
+
+/* voice channel description tweak for visibility */
+.containerDefault-YUSmu3:has(
+	div
+		>.wrapper-NhbLHG
+			>div
+				>.link-1_kTxV
+					>.linkBottom-128lIB
+						>.subtitle-3PyFgf)
+	>.list-2x9Cl9 {
+	padding-top:21px;
+}
+.linkBottom-128lIB {
+	padding-top:7px;
 }

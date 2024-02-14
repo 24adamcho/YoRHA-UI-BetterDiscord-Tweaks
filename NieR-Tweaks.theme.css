@@ -94,11 +94,14 @@
 	z-index: -1 !important;
 }
 
+/* spoilered text */
+.spoilerMarkdownContent__2b8f8:has(.obscuredTextContent__720d7 .obscuredTextContentInner__07680) {
+	box-shadow:2px 2px 0 var(--color-mid) !important;
+}
 /* unspoilered text */
-.obscuredTextContent__720d7[aria-hidden="false"] {
+.obscuredTextContentInner__07680[aria-hidden="false"] {
 	color: var(--color-high);
 	background-color: var(--color-low-trans);
-	border-radius: 4px;
 }
 
 .backgroundFlash_e5b9ad::before {
@@ -777,4 +780,18 @@ blockquote {
 }
 .theme-dark .root_a28985 {
 	box-shadow: 3px 3px 0 var(--color-low) !important
+}
+
+/* gif button hover */
+.icon__68853:hover {
+	color:var(--color-mid);
+	transform:scale(110%);
+	transition: color 0.1s ease-out,
+				transform 0.1s ease-out;
+}
+.icon__68853 {
+	color:var(--color-low);
+	transform:scale(100%);
+	transition: color 0.1s ease-out,
+				transform 0.1s ease-out;
 }

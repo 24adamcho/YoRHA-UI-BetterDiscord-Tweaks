@@ -806,3 +806,8 @@ blockquote {
 	transition: color 0.1s ease-out,
 				transform 0.1s ease-out;
 }
+
+/* message placeholder */
+.placeholder_e68c63.slateTextArea__0661c {
+	color:var(--color-mid);
+}

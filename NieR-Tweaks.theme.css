@@ -766,12 +766,13 @@ blockquote {
 			>div
 				>.link__95dc0
 					>.linkBottom_bac113
-						>.subtitle_bba2b7)
+						>.subtitle_bba2b7
+							>*)
 	>.list__02208 {
-	padding-top:21px;
+	padding-top:1em;
 }
 .linkBottom_bac113 {
-	padding-top:3px;
+	padding-top:0px;
 }
 
 /* profile tweaks */

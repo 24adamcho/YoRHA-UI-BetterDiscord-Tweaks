@@ -782,6 +782,16 @@ blockquote {
 	box-shadow: 3px 3px 0 var(--color-low) !important
 }
 
+/* roles */
+.role__631a3 {
+	border-radius:0;
+	background: var(--color-mid) !important;
+	box-shadow: 2px 2px 0 var(--color-low) !important
+}
+.roleName_d19d33>* {
+	color:var(--color-high);
+}
+
 /* gif button hover */
 .icon__68853:hover {
 	color:var(--color-mid);
